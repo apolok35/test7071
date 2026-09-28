@@ -1,0 +1,22 @@
+{
+	"name": "adb_deltaLake_lkp_ds",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureDatabricksDeltaLake",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureDatabricksDeltaLakeDataset",
+		"typeProperties": {
+			"database": "db1",
+			"table": "t1"
+		},
+		"schema": [
+			{
+				"name": "id",
+				"type": "integer"
+			}
+		]
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

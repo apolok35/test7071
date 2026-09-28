@@ -1,0 +1,17 @@
+{
+	"name": "myadls7071listconDS",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "myadls7071LS",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Binary",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation"
+			}
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

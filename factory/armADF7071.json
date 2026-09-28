@@ -1,0 +1,30 @@
+{
+	"name": "armADF7071",
+	"properties": {
+		"globalParameters": {
+			"global_param_sa_name": {
+				"type": "string",
+				"value": "mysa7071np"
+			}
+		},
+		"globalConfigurations": {
+			"PipelineBillingEnabled": "true"
+		},
+		"trustModeClaimForMi": {
+			"value": "Enabled",
+			"editable": true
+		}
+	},
+	"location": "eastus",
+	"identity": {
+		"type": "SystemAssigned,UserAssigned",
+		"principalId": "c5a6e895-d5de-4ded-b349-dc4d541d825f",
+		"tenantId": "16b3c013-d300-468d-ac64-7eda0820b6d3",
+		"userAssignedIdentities": {
+			"/subscriptions/aff32e6c-09cb-4750-b961-6217b30875cb/resourcegroups/adf/providers/Microsoft.ManagedIdentity/userAssignedIdentities/sqlUami": {
+				"clientId": "1313eddc-000c-4d00-bb9d-592a6a6d7cfd",
+				"principalId": "ca4e9bc2-9e9c-4b50-9be9-28638e996b6f"
+			}
+		}
+	}
+}

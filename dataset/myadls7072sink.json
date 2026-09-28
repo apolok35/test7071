@@ -1,0 +1,26 @@
+{
+	"name": "myadls7072sink",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "myadls7072LS",
+			"type": "LinkedServiceReference"
+		},
+		"parameters": {
+			"sink_cont": {
+				"type": "string"
+			}
+		},
+		"annotations": [],
+		"type": "Binary",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"fileSystem": {
+					"value": "@dataset().sink_cont",
+					"type": "Expression"
+				}
+			}
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

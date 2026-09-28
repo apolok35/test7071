@@ -1,0 +1,15 @@
+{
+	"name": "adls_uami_LS",
+	"type": "Microsoft.DataFactory/factories/linkedservices",
+	"properties": {
+		"annotations": [],
+		"type": "AzureBlobFS",
+		"typeProperties": {
+			"url": "https://mysa7071np.dfs.core.windows.net/",
+			"credential": {
+				"referenceName": "uami_cred",
+				"type": "CredentialReference"
+			}
+		}
+	}
+}

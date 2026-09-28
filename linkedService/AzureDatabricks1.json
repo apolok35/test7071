@@ -1,0 +1,18 @@
+{
+	"name": "AzureDatabricks1",
+	"type": "Microsoft.DataFactory/factories/linkedservices",
+	"properties": {
+		"annotations": [],
+		"type": "AzureDatabricks",
+		"typeProperties": {
+			"domain": "https://adb-2946687621173328.8.azuredatabricks.net",
+			"authentication": "MSI",
+			"workspaceResourceId": "/subscriptions/aff32e6c-09cb-4750-b961-6217b30875cb/resourceGroups/adf/providers/Microsoft.Databricks/workspaces/managed-ADB",
+			"newClusterNodeType": "Standard_DS3_v2",
+			"newClusterDriverNodeType": "Standard_DS3_v2",
+			"newClusterNumOfWorker": "1:2",
+			"newClusterVersion": "13.3.x-scala2.12",
+			"clusterOption": "Autoscaling"
+		}
+	}
+}

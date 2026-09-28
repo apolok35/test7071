@@ -1,0 +1,17 @@
+{
+	"name": "OracleTable_source",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "Oracle_Linux",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "OracleTable",
+		"schema": [],
+		"typeProperties": {
+			"schema": "TESTUSER",
+			"table": "T1"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

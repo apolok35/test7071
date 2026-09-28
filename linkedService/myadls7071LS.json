@@ -1,0 +1,11 @@
+{
+	"name": "myadls7071LS",
+	"type": "Microsoft.DataFactory/factories/linkedservices",
+	"properties": {
+		"annotations": [],
+		"type": "AzureBlobFS",
+		"typeProperties": {
+			"url": "https://myadls7071.dfs.core.windows.net/"
+		}
+	}
+}

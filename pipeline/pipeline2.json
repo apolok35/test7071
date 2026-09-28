@@ -1,0 +1,71 @@
+{
+	"name": "pipeline2",
+	"properties": {
+		"activities": [
+			{
+				"name": "get_LS_api",
+				"type": "WebActivity",
+				"state": "Inactive",
+				"onInactiveMarkAs": "Succeeded",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "0.12:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"method": "GET",
+					"url": "https://management.azure.com/subscriptions/aff32e6c-09cb-4750-b961-6217b30875cb/resourceGroups/adf/providers/Microsoft.DataFactory/factories/armADF7071/linkedservices/GoogleBigQuery_LS?api-version=2018-06-01",
+					"authentication": {
+						"type": "MSI",
+						"resource": "https://management.azure.com/"
+					}
+				}
+			},
+			{
+				"name": "create_IR",
+				"type": "WebActivity",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "0.12:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"method": "PUT",
+					"url": "https://management.azure.com/subscriptions/aff32e6c-09cb-4750-b961-6217b30875cb/resourceGroups/adf/providers/Microsoft.DataFactory/factories/armADF7071/integrationRuntimes/newautoResolveIR?api-version=2018-06-01",
+					"body": {
+						"properties": {
+							"type": "Managed",
+							"typeProperties": {
+								"computeProperties": {
+									"location": "North Europe",
+									"dataFlowProperties": {
+										"computeType": "General",
+										"coreCount": 8,
+										"timeToLive": 10,
+										"cleanup": false,
+										"customProperties": []
+									}
+								}
+							}
+						}
+					},
+					"authentication": {
+						"type": "MSI",
+						"resource": "https://management.azure.com/"
+					}
+				}
+			}
+		],
+		"annotations": [],
+		"lastPublishTime": "2026-04-09T10:23:22Z"
+	},
+	"type": "Microsoft.DataFactory/factories/pipelines"
+}

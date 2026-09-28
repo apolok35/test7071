@@ -1,0 +1,16 @@
+{
+	"name": "AzureBlobStorage7071",
+	"type": "Microsoft.DataFactory/factories/linkedservices",
+	"properties": {
+		"annotations": [],
+		"type": "AzureBlobStorage",
+		"typeProperties": {
+			"serviceEndpoint": "https://blob7071.blob.core.windows.net/",
+			"accountKind": "StorageV2"
+		},
+		"connectVia": {
+			"referenceName": "LinkedOnpremSHIR",
+			"type": "IntegrationRuntimeReference"
+		}
+	}
+}

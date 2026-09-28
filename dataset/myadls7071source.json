@@ -1,0 +1,26 @@
+{
+	"name": "myadls7071source",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "myadls7071LS",
+			"type": "LinkedServiceReference"
+		},
+		"parameters": {
+			"source_cont": {
+				"type": "string"
+			}
+		},
+		"annotations": [],
+		"type": "Binary",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"fileSystem": {
+					"value": "@dataset().source_cont",
+					"type": "Expression"
+				}
+			}
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

@@ -1,0 +1,31 @@
+{
+	"name": "get_pipelineRun_informatica",
+	"properties": {
+		"activities": [
+			{
+				"name": "get_pipelineRun_info",
+				"type": "WebActivity",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "0.12:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"method": "GET",
+					"url": "https://management.azure.com/subscriptions/aff32e6c-09cb-4750-b961-6217b30875cb/resourceGroups/adf/providers/Microsoft.DataFactory/factories/armADF7071 /pipelineruns/08f6c72a-a20c-4f5f-ad09-ef769906fdf1?api-version=2018-06-01",
+					"authentication": {
+						"type": "MSI",
+						"resource": "https://management.azure.com/"
+					}
+				}
+			}
+		],
+		"annotations": [],
+		"lastPublishTime": "2026-06-09T16:06:30Z"
+	},
+	"type": "Microsoft.DataFactory/factories/pipelines"
+}

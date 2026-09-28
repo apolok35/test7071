@@ -1,0 +1,13 @@
+{
+	"name": "Hubspot1",
+	"type": "Microsoft.DataFactory/factories/linkedservices",
+	"properties": {
+		"annotations": [],
+		"type": "Hubspot",
+		"version": "2.0",
+		"typeProperties": {
+			"clientId": "iphpi[h",
+			"encryptedCredential": "ew0KICAiVmVyc2lvbiI6ICIyMDE3LTExLTMwIiwNCiAgIlByb3RlY3Rpb25Nb2RlIjogIktleSIsDQogICJTZWNyZXRDb250ZW50VHlwZSI6ICJQbGFpbnRleHQiLA0KICAiQ3JlZGVudGlhbElkIjogIkRBVEFGQUNUT1JZQEQyNTFCMTc2LTdBODgtNDNGNy1CODI0LTA5MDIyNUMzMDk4RF80ZWIzOGUwNy00ZDI5LTQxYTMtYTI1Yy1jMWU4ZmZjZjEzOGIiDQp9"
+		}
+	}
+}

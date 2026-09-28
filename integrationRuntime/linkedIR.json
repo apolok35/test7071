@@ -1,0 +1,12 @@
+{
+	"name": "linkedIR",
+	"properties": {
+		"type": "SelfHosted",
+		"typeProperties": {
+			"linkedInfo": {
+				"resourceId": "/subscriptions/aff32e6c-09cb-4750-b961-6217b30875cb/resourcegroups/adf/providers/Microsoft.DataFactory/factories/adfDev7071/integrationruntimes/SHIR",
+				"authorizationType": "Rbac"
+			}
+		}
+	}
+}
