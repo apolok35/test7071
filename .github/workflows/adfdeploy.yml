@@ -1,0 +1,26 @@
+name: Deploy ADF
+
+on:
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+
+    - name: Checkout
+      uses: actions/checkout@v4
+
+    - name: Azure Login
+      uses: azure/login@v2
+      with:
+        creds: ${{ secrets.AZURE_CREDENTIALS }}
+
+    - name: Deploy ARM
+      uses: azure/arm-deploy@v2
+      with:
+        subscriptionId: aff32e6c-09cb-4750-b961-6217b30875cb
+        resourceGroupName: adf
+        template: adf_publish/ARMTemplateForFactory.json
+        parameters: adf_publish/ARMTemplateParametersForFactory.json
