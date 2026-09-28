@@ -1,0 +1,299 @@
+{
+	"$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"type": "string",
+			"metadata": "Data Factory name",
+			"defaultValue": "armADF7071"
+		},
+		"AzureDataLakeStorage2_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'AzureDataLakeStorage2'"
+		},
+		"AzureDatabricks2_accessToken": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accessToken' of 'AzureDatabricks2'"
+		},
+		"AzureDatabricksDeltaLake_accessToken": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accessToken' of 'AzureDatabricksDeltaLake'"
+		},
+		"AzureSqlDatabase1_password": {
+			"type": "secureString",
+			"metadata": "Secure string for 'password' of 'AzureSqlDatabase1'"
+		},
+		"AzureSynapseAnalytics1_password": {
+			"type": "secureString",
+			"metadata": "Secure string for 'password' of 'AzureSynapseAnalytics1'"
+		},
+		"Hubspot1_clientSecret": {
+			"type": "secureString",
+			"metadata": "Secure string for 'clientSecret' of 'Hubspot1'"
+		},
+		"Hubspot1_accessToken": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accessToken' of 'Hubspot1'"
+		},
+		"Hubspot1_refreshToken": {
+			"type": "secureString",
+			"metadata": "Secure string for 'refreshToken' of 'Hubspot1'"
+		},
+		"Oracle_Linux_password": {
+			"type": "secureString",
+			"metadata": "Secure string for 'password' of 'Oracle_Linux'"
+		},
+		"gbq_latest_clientSecret": {
+			"type": "secureString",
+			"metadata": "Secure string for 'clientSecret' of 'gbq_latest'"
+		},
+		"gbq_latest_refreshToken": {
+			"type": "secureString",
+			"metadata": "Secure string for 'refreshToken' of 'gbq_latest'"
+		},
+		"newADBls_accessToken": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accessToken' of 'newADBls'"
+		},
+		"AzureBlobStorage7071_properties_typeProperties_serviceEndpoint": {
+			"type": "string",
+			"defaultValue": "https://blob7071.blob.core.windows.net/"
+		},
+		"AzureDataLakeStorage1_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "@{concat('https://', linkedService().ls_param_sa_name, '.dfs.core.windows.net')}"
+		},
+		"AzureDataLakeStorage2_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://mysa7071np.dfs.core.windows.net/"
+		},
+		"AzureSqlDatabase1_properties_typeProperties_server": {
+			"type": "string",
+			"defaultValue": "sql7072.database.windows.net"
+		},
+		"AzureSqlDatabase1_properties_typeProperties_database": {
+			"type": "string",
+			"defaultValue": "db1"
+		},
+		"AzureSqlDatabase1_properties_typeProperties_userName": {
+			"type": "string",
+			"defaultValue": "nonto"
+		},
+		"AzureSynapseAnalytics1_properties_typeProperties_server": {
+			"type": "string",
+			"defaultValue": "synapse-ws-7071.sql.azuresynapse.net"
+		},
+		"AzureSynapseAnalytics1_properties_typeProperties_database": {
+			"type": "string",
+			"defaultValue": "sqlp"
+		},
+		"AzureSynapseAnalytics1_properties_typeProperties_userName": {
+			"type": "string",
+			"defaultValue": "nonto"
+		},
+		"Hubspot1_properties_typeProperties_clientId": {
+			"type": "string",
+			"defaultValue": "iphpi[h"
+		},
+		"Oracle_Linux_properties_typeProperties_server": {
+			"type": "string",
+			"defaultValue": "(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=20.198.78.170)(PORT=1521))(CONNECT_DATA=(SERVICE_NAME=ORA_SERVICE))) "
+		},
+		"Oracle_Linux_properties_typeProperties_username": {
+			"type": "string",
+			"defaultValue": "testuser"
+		},
+		"adls_uami_LS_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://mysa7071np.dfs.core.windows.net/"
+		},
+		"gbq_latest_properties_typeProperties_clientId": {
+			"type": "string",
+			"defaultValue": "dummyclientID"
+		},
+		"myadls7071LS_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://myadls7071.dfs.core.windows.net/"
+		},
+		"myadls7072LS_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://myadls7072.dfs.core.windows.net/"
+		},
+		"newADBls_properties_typeProperties_existingClusterId": {
+			"type": "string",
+			"defaultValue": "0414-130918-6z6i2ik7"
+		},
+		"LinkedOnpremSHIR_properties_typeProperties_linkedInfo_resourceId": {
+			"type": "string",
+			"defaultValue": "/subscriptions/aff32e6c-09cb-4750-b961-6217b30875cb/resourcegroups/adf/providers/Microsoft.DataFactory/factories/adfDev7071/integrationruntimes/onPremSHIR"
+		},
+		"linkedIR_properties_typeProperties_linkedInfo_resourceId": {
+			"type": "string",
+			"defaultValue": "/subscriptions/aff32e6c-09cb-4750-b961-6217b30875cb/resourcegroups/adf/providers/Microsoft.DataFactory/factories/adfDev7071/integrationruntimes/SHIR"
+		},
+		"containerUri": {
+			"type": "string",
+			"metadata": "URI to storage account containing linked ARM templates"
+		},
+		"containerSasToken": {
+			"type": "string",
+			"metadata": "Sas token to storage account containing linked ARM templates"
+		}
+	},
+	"variables": {
+		"factoryId": "[concat('Microsoft.DataFactory/factories/', parameters('factoryName'))]"
+	},
+	"resources": [
+		{
+			"name": "armADF7071_ArmTemplate_0",
+			"type": "Microsoft.Resources/deployments",
+			"apiVersion": "2024-03-01",
+			"properties": {
+				"mode": "incremental",
+				"templateLink": {
+					"uri": "[concat(parameters('containerUri'), '/ArmTemplate_0.json', parameters('containerSasToken'))]",
+					"contentVersion": "1.0.0.0"
+				},
+				"parameters": {
+					"factoryName": {
+						"value": "[parameters('factoryName')]"
+					},
+					"AzureDatabricks2_accessToken": {
+						"value": "[parameters('AzureDatabricks2_accessToken')]"
+					},
+					"AzureDatabricksDeltaLake_accessToken": {
+						"value": "[parameters('AzureDatabricksDeltaLake_accessToken')]"
+					},
+					"AzureSynapseAnalytics1_password": {
+						"value": "[parameters('AzureSynapseAnalytics1_password')]"
+					},
+					"Hubspot1_clientSecret": {
+						"value": "[parameters('Hubspot1_clientSecret')]"
+					},
+					"Hubspot1_accessToken": {
+						"value": "[parameters('Hubspot1_accessToken')]"
+					},
+					"Hubspot1_refreshToken": {
+						"value": "[parameters('Hubspot1_refreshToken')]"
+					},
+					"newADBls_accessToken": {
+						"value": "[parameters('newADBls_accessToken')]"
+					},
+					"AzureDataLakeStorage1_properties_typeProperties_url": {
+						"value": "[parameters('AzureDataLakeStorage1_properties_typeProperties_url')]"
+					},
+					"AzureSynapseAnalytics1_properties_typeProperties_server": {
+						"value": "[parameters('AzureSynapseAnalytics1_properties_typeProperties_server')]"
+					},
+					"AzureSynapseAnalytics1_properties_typeProperties_database": {
+						"value": "[parameters('AzureSynapseAnalytics1_properties_typeProperties_database')]"
+					},
+					"AzureSynapseAnalytics1_properties_typeProperties_userName": {
+						"value": "[parameters('AzureSynapseAnalytics1_properties_typeProperties_userName')]"
+					},
+					"Hubspot1_properties_typeProperties_clientId": {
+						"value": "[parameters('Hubspot1_properties_typeProperties_clientId')]"
+					},
+					"myadls7071LS_properties_typeProperties_url": {
+						"value": "[parameters('myadls7071LS_properties_typeProperties_url')]"
+					},
+					"myadls7072LS_properties_typeProperties_url": {
+						"value": "[parameters('myadls7072LS_properties_typeProperties_url')]"
+					},
+					"newADBls_properties_typeProperties_existingClusterId": {
+						"value": "[parameters('newADBls_properties_typeProperties_existingClusterId')]"
+					},
+					"LinkedOnpremSHIR_properties_typeProperties_linkedInfo_resourceId": {
+						"value": "[parameters('LinkedOnpremSHIR_properties_typeProperties_linkedInfo_resourceId')]"
+					},
+					"linkedIR_properties_typeProperties_linkedInfo_resourceId": {
+						"value": "[parameters('linkedIR_properties_typeProperties_linkedInfo_resourceId')]"
+					}
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "armADF7071_ArmTemplate_1",
+			"type": "Microsoft.Resources/deployments",
+			"apiVersion": "2024-03-01",
+			"properties": {
+				"mode": "incremental",
+				"templateLink": {
+					"uri": "[concat(parameters('containerUri'), '/ArmTemplate_1.json', parameters('containerSasToken'))]",
+					"contentVersion": "1.0.0.0"
+				},
+				"parameters": {
+					"factoryName": {
+						"value": "[parameters('factoryName')]"
+					},
+					"AzureDataLakeStorage2_accountKey": {
+						"value": "[parameters('AzureDataLakeStorage2_accountKey')]"
+					},
+					"AzureSqlDatabase1_password": {
+						"value": "[parameters('AzureSqlDatabase1_password')]"
+					},
+					"Oracle_Linux_password": {
+						"value": "[parameters('Oracle_Linux_password')]"
+					},
+					"gbq_latest_clientSecret": {
+						"value": "[parameters('gbq_latest_clientSecret')]"
+					},
+					"gbq_latest_refreshToken": {
+						"value": "[parameters('gbq_latest_refreshToken')]"
+					},
+					"AzureBlobStorage7071_properties_typeProperties_serviceEndpoint": {
+						"value": "[parameters('AzureBlobStorage7071_properties_typeProperties_serviceEndpoint')]"
+					},
+					"AzureDataLakeStorage2_properties_typeProperties_url": {
+						"value": "[parameters('AzureDataLakeStorage2_properties_typeProperties_url')]"
+					},
+					"AzureSqlDatabase1_properties_typeProperties_server": {
+						"value": "[parameters('AzureSqlDatabase1_properties_typeProperties_server')]"
+					},
+					"AzureSqlDatabase1_properties_typeProperties_database": {
+						"value": "[parameters('AzureSqlDatabase1_properties_typeProperties_database')]"
+					},
+					"AzureSqlDatabase1_properties_typeProperties_userName": {
+						"value": "[parameters('AzureSqlDatabase1_properties_typeProperties_userName')]"
+					},
+					"Oracle_Linux_properties_typeProperties_server": {
+						"value": "[parameters('Oracle_Linux_properties_typeProperties_server')]"
+					},
+					"Oracle_Linux_properties_typeProperties_username": {
+						"value": "[parameters('Oracle_Linux_properties_typeProperties_username')]"
+					},
+					"adls_uami_LS_properties_typeProperties_url": {
+						"value": "[parameters('adls_uami_LS_properties_typeProperties_url')]"
+					},
+					"gbq_latest_properties_typeProperties_clientId": {
+						"value": "[parameters('gbq_latest_properties_typeProperties_clientId')]"
+					}
+				}
+			},
+			"dependsOn": [
+				"[resourceId('Microsoft.Resources/deployments', 'armADF7071_ArmTemplate_0')]"
+			]
+		},
+		{
+			"name": "armADF7071_ArmTemplate_2",
+			"type": "Microsoft.Resources/deployments",
+			"apiVersion": "2024-03-01",
+			"properties": {
+				"mode": "incremental",
+				"templateLink": {
+					"uri": "[concat(parameters('containerUri'), '/ArmTemplate_2.json', parameters('containerSasToken'))]",
+					"contentVersion": "1.0.0.0"
+				},
+				"parameters": {
+					"factoryName": {
+						"value": "[parameters('factoryName')]"
+					}
+				}
+			},
+			"dependsOn": [
+				"[resourceId('Microsoft.Resources/deployments', 'armADF7071_ArmTemplate_1')]"
+			]
+		}
+	]
+}

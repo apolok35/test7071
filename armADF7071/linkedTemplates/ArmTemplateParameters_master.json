@@ -1,0 +1,108 @@
+{
+	"$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"value": "armADF7071"
+		},
+		"AzureDataLakeStorage2_accountKey": {
+			"value": ""
+		},
+		"AzureDatabricks2_accessToken": {
+			"value": ""
+		},
+		"AzureDatabricksDeltaLake_accessToken": {
+			"value": ""
+		},
+		"AzureSqlDatabase1_password": {
+			"value": ""
+		},
+		"AzureSynapseAnalytics1_password": {
+			"value": ""
+		},
+		"Hubspot1_clientSecret": {
+			"value": ""
+		},
+		"Hubspot1_accessToken": {
+			"value": ""
+		},
+		"Hubspot1_refreshToken": {
+			"value": ""
+		},
+		"Oracle_Linux_password": {
+			"value": ""
+		},
+		"gbq_latest_clientSecret": {
+			"value": ""
+		},
+		"gbq_latest_refreshToken": {
+			"value": ""
+		},
+		"newADBls_accessToken": {
+			"value": ""
+		},
+		"AzureBlobStorage7071_properties_typeProperties_serviceEndpoint": {
+			"value": "https://blob7071.blob.core.windows.net/"
+		},
+		"AzureDataLakeStorage1_properties_typeProperties_url": {
+			"value": "@{concat('https://', linkedService().ls_param_sa_name, '.dfs.core.windows.net')}"
+		},
+		"AzureDataLakeStorage2_properties_typeProperties_url": {
+			"value": "https://mysa7071np.dfs.core.windows.net/"
+		},
+		"AzureSqlDatabase1_properties_typeProperties_server": {
+			"value": "sql7072.database.windows.net"
+		},
+		"AzureSqlDatabase1_properties_typeProperties_database": {
+			"value": "db1"
+		},
+		"AzureSqlDatabase1_properties_typeProperties_userName": {
+			"value": "nonto"
+		},
+		"AzureSynapseAnalytics1_properties_typeProperties_server": {
+			"value": "synapse-ws-7071.sql.azuresynapse.net"
+		},
+		"AzureSynapseAnalytics1_properties_typeProperties_database": {
+			"value": "sqlp"
+		},
+		"AzureSynapseAnalytics1_properties_typeProperties_userName": {
+			"value": "nonto"
+		},
+		"Hubspot1_properties_typeProperties_clientId": {
+			"value": "iphpi[h"
+		},
+		"Oracle_Linux_properties_typeProperties_server": {
+			"value": "(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=20.198.78.170)(PORT=1521))(CONNECT_DATA=(SERVICE_NAME=ORA_SERVICE))) "
+		},
+		"Oracle_Linux_properties_typeProperties_username": {
+			"value": "testuser"
+		},
+		"adls_uami_LS_properties_typeProperties_url": {
+			"value": "https://mysa7071np.dfs.core.windows.net/"
+		},
+		"gbq_latest_properties_typeProperties_clientId": {
+			"value": "dummyclientID"
+		},
+		"myadls7071LS_properties_typeProperties_url": {
+			"value": "https://myadls7071.dfs.core.windows.net/"
+		},
+		"myadls7072LS_properties_typeProperties_url": {
+			"value": "https://myadls7072.dfs.core.windows.net/"
+		},
+		"newADBls_properties_typeProperties_existingClusterId": {
+			"value": "0414-130918-6z6i2ik7"
+		},
+		"LinkedOnpremSHIR_properties_typeProperties_linkedInfo_resourceId": {
+			"value": "/subscriptions/aff32e6c-09cb-4750-b961-6217b30875cb/resourcegroups/adf/providers/Microsoft.DataFactory/factories/adfDev7071/integrationruntimes/onPremSHIR"
+		},
+		"linkedIR_properties_typeProperties_linkedInfo_resourceId": {
+			"value": "/subscriptions/aff32e6c-09cb-4750-b961-6217b30875cb/resourcegroups/adf/providers/Microsoft.DataFactory/factories/adfDev7071/integrationruntimes/SHIR"
+		},
+		"containerUri": {
+			"value": ""
+		},
+		"containerSasToken": {
+			"value": ""
+		}
+	}
+}
