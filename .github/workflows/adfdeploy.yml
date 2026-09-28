@@ -22,5 +22,5 @@ jobs:
       with:
         subscriptionId: aff32e6c-09cb-4750-b961-6217b30875cb
         resourceGroupName: adf
-        template: adf_publish/ARMTemplateForFactory.json
-        parameters: adf_publish/ARMTemplateParametersForFactory.json
+        template: adf_publish/armADF7071/ARMTemplateForFactory.json
+        parameters: adf_publish/armADF7071/ARMTemplateParametersForFactory.json
